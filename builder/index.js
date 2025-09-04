@@ -66,45 +66,45 @@ class CarroBuilder {
 class CarDirector {
   static buildCarro1() {
     return new CarroBuilder()
-      .setbrand("Intel i9")
-      .setmodel("NVIDIA RTX 4090")
-      .setyear("64GB")
-      .setengine("2TB SSD")
-      .setcolor("1000W")
-      .setgps("Full Tower")
+      .setbrand("Fiat")
+      .setmodel("Uno")
+      .setyear("1999")
+      .setengine("v1")
+      .setcolor("branco papel")
+      .setgps(false)
       .build();
   }
 
   static buildCarro2() {
     return new CarroBuilder()
-      .setbrand("Intel i9")
-      .setmodel("NVIDIA RTX 4090")
-      .setyear("64GB")
-      .setengine("2TB SSD")
-      .setcolor("1000W")
-      .setgps("Full Tower")
+      .setbrand("Porche")
+      .setmodel("911")
+      .setyear("2005")
+      .setengine("v8")
+      .setcolor("vermelho rose")
+      .setgps(true)
       .build();
   }
 
   static buildCarro3() {
     return new CarroBuilder()
-      .setbrand("Intel i9")
-      .setmodel("NVIDIA RTX 4090")
-      .setyear("64GB")
-      .setengine("2TB SSD")
-      .setcolor("1000W")
-      .setgps("Full Tower")
+      .setbrand("Honda")
+      .setmodel("Civic")
+      .setyear(2023)
+      .setengine("1.5 Turbo")
+      .setcolor("Prata")
+      .setgps(false)
       .build();
   }
 }
 
 // Uso
-const gamer = CarDirector.buildCarro1();
-const office = CarDirector.buildCarro2();
-const dev = CarDirector.buildCarro3();
-const satc = new CarroBuilder().setcolor("marrom turquesa").build();
+const corporativo = CarDirector.buildCarro1();
+const top = CarDirector.buildCarro2();
+const generico = CarDirector.buildCarro3();
+const expecial = new CarroBuilder().setcolor("marrom turquesa").setbrand("mclaren").build();
 
-gamer.showDetails();
-office.showDetails();
-dev.showDetails();
-satc.showDetails();
+corporativo.showDetails();
+top.showDetails();
+generico.showDetails();
+expecial.showDetails();
