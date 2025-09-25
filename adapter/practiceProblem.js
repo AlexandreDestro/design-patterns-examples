@@ -12,6 +12,19 @@ class SMSService {
   }
 }
 
+// Adapter que "traduz" ExternalNotifier para o formato esperado
+class ExternalNotifier extends Notifier {
+  constructor(externalNotifier) {
+    super();
+    this.externalNotifier = externalNotifier;
+  }
+
+  processPayment(amount) {
+    // Adaptando o método
+    this.externalNotifier.makeTransaction(text);
+  }
+}
+
 // Cliente
 function notifyUser(notifier, message) {
   notifier.send(message);
