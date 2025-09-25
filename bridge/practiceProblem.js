@@ -1,31 +1,75 @@
-// Muitas combinações duplicadas
-class AudioWindows {
-  play() {
-    console.log("Reproduzindo áudio no Windows");
+// // Muitas combinações duplicadas
+// class AudioWindows {
+//   play() {
+//     console.log("Reproduzindo áudio no Windows");
+//   }
+// }
+
+// class AudioLinux {
+//   play() {
+//     console.log("Reproduzindo áudio no Linux");
+//   }
+// }
+
+// class VideoWindows {
+//   play() {
+//     console.log("Reproduzindo vídeo no Windows");
+//   }
+// }
+
+// class VideoLinux {
+//   play() {
+//     console.log("Reproduzindo vídeo no Linux");
+//   }
+// }
+
+// Implementação: Renderizadores (podem variar independente das formas)
+class Windows {
+  playformat(formato) {
+    console.log(`Tocando ${formato} no Windows`);
   }
 }
 
-class AudioLinux {
-  play() {
-    console.log("Reproduzindo áudio no Linux");
+class Linux {
+  playformat(formato) {
+    console.log(`Tocando ${formato} no Linux`);
   }
 }
 
-class VideoWindows {
-  play() {
-    console.log("Reproduzindo vídeo no Windows");
+
+// Abstração: Forma (usa um renderizador)
+class Formato {
+  constructor(formato) {
+    this.formato = formato;
   }
 }
 
-class VideoLinux {
+class Video extends Formato {
   play() {
-    console.log("Reproduzindo vídeo no Linux");
+    this.formato.playformat("video");
   }
 }
 
-// Cliente
-const a1 = new AudioWindows();
-a1.play();
+class Audio extends Formato {
+  play() {
+    this.formato.playformat("audio");
+  }
+}
 
-const v1 = new VideoLinux();
-v1.play();
+
+// Cliente bridge
+const windows = new Windows();
+const linux = new Linux();
+
+const b1 = new Audio(windows);
+b1.play();
+
+const b2 = new Video(linux);
+b2.play();
+
+// // Cliente
+// const a1 = new AudioWindows();
+// a1.play();
+
+// const v1 = new VideoLinux();
+// v1.play();
