@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start01": "node adapter/praticeProblem.js"
+    "start01": "node adapter/practiceProblem.js"
 
   },
   "author": "Ugioni",
